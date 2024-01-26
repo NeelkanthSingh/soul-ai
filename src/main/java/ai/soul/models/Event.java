@@ -1,13 +1,14 @@
 package ai.soul.models;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -18,8 +19,7 @@ import java.util.Set;
 @Table(name = "event",
         indexes = {
                 @Index(name = "idx_recurring", columnList = "recurring"),
-//                @Index(name = "idx_event_id", columnList = "event_id"),
-                @Index(name = "idx_allotted_date", columnList = "allotted_date"),
+                @Index(name = "idx_allotted_date", columnList = "allotted_date")
         }
 )
 public class Event {
@@ -28,11 +28,26 @@ public class Event {
     @Column(name = "event_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long event_id;
-    private LocalDateTime allotted_date;
+    private LocalDate allotted_date;
     private LocalTime start_time;
     private LocalTime end_time;
     private boolean recurring;
 
-    @OneToMany(mappedBy = "event", cascade = CascadeType.ALL)
+    @JsonManagedReference
+    @ToString.Exclude
+    @OneToMany(mappedBy = "event", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<UserEvent> user_events;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof User)) return false;
+        Event event = (Event) o;
+        return Objects.equals(event_id, event.event_id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(event_id);
+    }
 }

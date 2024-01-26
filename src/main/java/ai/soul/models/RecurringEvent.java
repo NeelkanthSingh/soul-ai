@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 @Entity
 @Data
@@ -25,4 +26,17 @@ public class RecurringEvent {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "event_id", referencedColumnName = "event_id", unique = true)
     private Event event;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof RecurringEvent)) return false;
+        RecurringEvent that = (RecurringEvent) o;
+        return Objects.equals(recurring_event_id, that.recurring_event_id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(recurring_event_id);
+    }
 }

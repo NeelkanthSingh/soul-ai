@@ -6,6 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="807532c0-1077-4879-8a32-bcb9040cf1da" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/soul/controllers/UserEventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/soul/controllers/UserEventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/soul/models/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/soul/models/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/soul/models/RecurringEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/soul/models/RecurringEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/soul/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/soul/models/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/soul/models/UserEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/soul/models/UserEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ai/soul/models/compositeKeys/UserEventID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ai/soul/models/compositeKeys/UserEventID.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +24,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -39,16 +46,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/Users/n02/SoulAI/CalendarScheduler/src/main/resources",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/n02/SoulAI/CalendarScheduler/src/main/resources&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources" />

@@ -5,16 +5,31 @@ import jakarta.persistence.Embeddable;
 import lombok.*;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 @Embeddable
 @Data
-@RequiredArgsConstructor
+@NoArgsConstructor
 @AllArgsConstructor
 public class UserEventID implements Serializable {
 
     @Column(name = "user_id")
-    Long userId;
+    private Long user_id;
 
     @Column(name = "event_id")
-    Long eventId;
+    private Long event_id;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof UserEventID)) return false;
+        UserEventID that = (UserEventID) o;
+        return Objects.equals(user_id, that.user_id) &&
+                Objects.equals(event_id, that.event_id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(user_id, event_id);
+    }
 }
