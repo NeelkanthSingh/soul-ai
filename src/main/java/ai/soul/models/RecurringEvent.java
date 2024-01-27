@@ -5,7 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-import java.time.LocalDateTime;
+
+import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity
@@ -21,7 +22,7 @@ public class RecurringEvent {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long recurring_event_id;
 
-    private LocalDateTime allotted_till_date;
+    private LocalDate allotted_till_date;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "event_id", referencedColumnName = "event_id", unique = true)
